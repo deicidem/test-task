@@ -1,0 +1,178 @@
+* 
+  box-sizing: border-box
+  
+#app
+  width: 100%
+  min-height: 100vh
+  display: flex
+  align-items: center
+  justify-content: center
+
+body
+  background: url('../img/Pattern.png') 
+  padding: 0
+  margin: 0
+  font-family: "Trebuchet MS", sans-serif
+  position: relative
+  &::after
+    top: 0
+    left: 0
+    z-index: -1
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    background: url('../img/Shadow.png') center no-repeat
+    background-size: cover
+.container 
+  width: 100%
+.title
+  text-align: center
+  color: #ffffff
+  font-size: 36px
+  font-weight: normal
+  font-family: "Exo"
+  margin: 0
+  margin-bottom: 15px
+.card
+  width: 320px
+  margin-bottom: 30px
+  &s
+    display: flex
+    align-items: center
+    justify-content: space-evenly
+    flex-wrap: wrap
+    width: 100%
+  &-content
+    cursor: pointer
+    transition: all 0.3s ease-out
+    width: 320px
+    height: 480px
+    background: #f2f2f2
+    clip-path: polygon(12.5% 0, 100% 0, 100% 100%, 0 100%, 0 8.3%)
+    border-radius: 10px
+    border: 3px solid #1698d9
+    position: relative
+    margin-bottom: 15px
+    padding: 20px 45px
+    z-index: 1
+    overflow: hidden
+    &::before
+      transition: all 0.3s ease-out
+      content: ''
+      position: absolute
+      height: 3px
+      width: 65px
+      background: #1698d9
+      top: 19px
+      left: -17px
+      transform: rotate(-45deg)
+      transform-origin: center      
+  &-subtitle
+    font-size: 16px
+    margin-bottom: 10px
+    color: #666666
+  &-title
+    margin: 0
+    font-size: 48px
+    &__consist
+      margin: 0
+      font-size: 24px
+      margin-bottom: 20px
+  &-amount
+    color: #666666
+    font-size: 14px
+  &-img
+    z-index: -1
+    left: -25px
+    bottom: -90px
+    position: absolute
+  &-vol
+    transition: all 0.3s ease-out
+    position: absolute
+    width: 80px
+    height: 80px
+    background: #1698d9
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 1
+    flex-direction: column
+    border-radius: 50%
+    font-size: 40px
+    line-height: 0.95
+    color: #ffffff
+    right: 15px
+    bottom: 15px
+    span
+      font-size: 24px
+  &-small
+    font-size: 13px
+    color: #ffffff
+    text-align: center
+    a
+      transition: all 0.3s ease-out
+      color: #1698d9
+  &_hover
+    .card
+      &-small
+        a
+          color: #2ea8e6
+      &-content
+        border: 3px solid #2ea8e6
+        &::before
+          background: #2ea8e6
+      &-vol
+        background: #2ea8e6
+  &_disabled
+    .card
+      
+      &-small
+        color: #ffff66
+      &-content
+        cursor: default
+        color: #666666
+        border: 3px solid #b3b3b3
+        &::before
+          background: #b3b3b3
+        &::after
+          position: absolute
+          content: ''
+          width: 100%
+          height: 100%
+          left: 0
+          top: 0
+          z-index: 5
+          background: rgba(#b3b3b3, 0.5)
+      &-vol
+        background: #b3b3b3
+  &_active
+    .card
+      &-small
+        a
+          color: #d91667
+      &-vol
+        background: #d91667
+      &-content
+        border: 3px solid #d91667
+        &::before
+          background: #d91667
+    &_hover
+      .card
+        &-subtitle
+          color: #e62e7a
+        &-small
+          a
+            color: #e62e7a
+        &-content
+          border: 3px solid #e62e7a
+          &::before
+            background: #e62e7a
+        &-vol
+          background: #e62e7a
+      
+    
+      
+          
+    
+
